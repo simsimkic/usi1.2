@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using ZdravoCorp.Model.DAO;
+using ZdravoCorp.Model;
+using ZdravoCorp.ViewModel;
+using ZdravoCorp.Model.Enum;
+using System.Collections.ObjectModel;
+using ZdravoCorp.ViewModel.Form;
+
+namespace ZdravoCorp.View
+{
+    /// <summary>
+    /// Interaction logic for AppointmentView.xaml
+    /// </summary>
+    public partial class AppointmentView : Window
+    {
+        public AppointmentView(Doctor doctor, ObservableCollection<AppointmentViewModel> _appointments)
+        {
+            InitializeComponent();
+            DataContext = new DoctorAppointmentCreateFormViewModel(this, doctor, _appointments);
+        }
+    }
+}

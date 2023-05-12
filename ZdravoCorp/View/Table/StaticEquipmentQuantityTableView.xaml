@@ -1,0 +1,108 @@
+﻿<Window x:Class="ZdravoCorp.View.Table.StaticEquipmentQuantityTableView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoCorp.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="5,0,0,0">
+            <TextBlock Text="Filter" FontSize="15"/>
+
+        </Grid>
+        <Grid Grid.Row="1" Margin="5,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+  
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Tip soba: "/>
+            <StackPanel Grid.Column="1" Margin="0,2,0,0" Orientation="Horizontal">
+                <CheckBox Content="Operaciona sala" Margin="0,0,10,0"  IsChecked="{Binding OperationRoom}"/>
+                <CheckBox Content="Sala za smestaj bolesnika" Margin="0,0,10,0"  IsChecked="{Binding PatientRoom}"/>
+                <CheckBox Content="Sala za preglede" Margin="0,0,10,0"  IsChecked="{Binding ExaminationRoom}"/>
+                <CheckBox Content="Cekaonica" Margin="0,0,10,0"  IsChecked="{Binding WaitingRoom}"/>
+                <CheckBox Content="Magacin" Margin="0,0,10,0" IsChecked="{Binding Warehouse}"/>
+            </StackPanel>
+
+
+        </Grid>
+        
+        <Grid Grid.Row="2" Margin="5,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Tip opreme: "/>
+            <StackPanel Grid.Column="1" Margin="0,2,0,0" Orientation="Horizontal">
+                <CheckBox Content="Sobni namestaj" Margin="0,0,10,0"  IsChecked="{Binding RoomFurinture}" />
+                <CheckBox Content="Oprema za preglede" Margin="0,0,10,0"  IsChecked="{Binding Examination}"/>
+                <CheckBox Content="Oprema za opreacije" Margin="0,0,10,0"  IsChecked="{Binding Operation}"/>
+                <CheckBox Content="Oprema za hodnik" Margin="0,0,10,0"  IsChecked="{Binding Hallway}"/>
+            </StackPanel>
+
+
+        </Grid>
+
+        <Label Grid.Row="3" />
+
+        <ListView Grid.Row="4" Margin="5 10 5 5" ItemsSource="{Binding Equipments}" Width="700" BorderBrush="Black">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem" >
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"  />
+                    <Setter Property="Padding" Value="5" />
+
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View >
+                <GridView>
+
+
+                    <GridViewColumn Header="Oprema"  Width="233">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Type}" Padding="0 0 20 0" Width="auto"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn Header="Tip opreme" Width="233" >
+                        <GridViewColumn.CellTemplate >
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Purpose}" Padding="0 0 20 0" Width="auto"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Kolicina" Width="233" >
+                        <GridViewColumn.CellTemplate >
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Quantity}" Padding="0 0 0 0" Width="auto"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Search: " Margin="0,0,10,0"/>
+            <TextBox Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="0,0,10,0"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

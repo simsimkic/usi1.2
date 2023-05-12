@@ -1,0 +1,118 @@
+﻿<Window x:Class="ZdravoCorp.View.AppointmentView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:ZdravoCorp.View"
+        xmlns:viewmodel="clr-namespace:ZdravoCorp.ViewModel.Form" 
+        d:DataContext="{d:DesignInstance Type=viewmodel:DoctorAppointmentCreateFormViewModel}"
+        mc:Ignorable="d" 
+        Title="Add Appointment" Height="360" Width="480">
+    
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <TextBlock
+                Grid.Row="0"
+                Text="Pregledi i operacije"
+                Style="{StaticResource Header}" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                Text="Pacijent:"/>
+            <!--<ListBox SelectedIndex="0" Grid.Column="1" Margin="0,0,0,32"
+                     ItemsSource="{Binding Patients}" 
+                     SelectedItem="{Binding SelectedPatient}"/>-->
+
+            <ComboBox SelectedIndex="0" Grid.Column="1" Margin="0,0,0,32"
+                      ItemsSource="{Binding Patients}"
+                      SelectedItem="{Binding SelectedPatient}"
+                      DisplayMemberPath="Name">
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                Text="Vrsta pregleda:"/>
+            <StackPanel Margin="10" Grid.Column="1" Orientation="Horizontal">
+                <RadioButton 
+                    Content="Operacija" 
+                    GroupName="Options" 
+                    Margin="0,0,30,0" 
+                    IsChecked="{Binding IsOperationSelected}"
+                    Command="{Binding EnableTextBoxCommand}"/>
+                <RadioButton 
+                    Content="Pregled" 
+                    GroupName="Options"
+                    IsChecked="{Binding IsAppointmentSelected}"
+                    Command="{Binding DisableTextBoxCommand}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                Text="Trajanje operacije:" />
+            <TextBox
+                Grid.Column="1" Margin="0,0,0,32"
+                Text="{Binding Duration}"
+                IsEnabled="{Binding IsTextBoxEnabled}"/>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                Text="Datum i vreme: "
+                Margin="0 0 15 0"/>
+            <xctk:TimePicker 
+                Grid.Column="1"
+                Format="Custom" x:Name="fromDTP"
+                FormatString="dd/MM/yyyy HH:mm"
+                Text="{Binding DateAndTime}" 
+                StartTime="08:00"
+                EndTime="22:00" Margin="0,0,0,28"/>
+            
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <StackPanel 
+                Grid.Column="2" 
+                Orientation="Horizontal" 
+                Margin="0 25 0 0" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Center">
+                <Button Content="Potvrdi"
+                        Command="{Binding CreateAppointmentCommand}"/>
+                <Button Margin="10 0 10 0" Content="Otkaži"
+                        Command="{Binding CloseCommand}"
+                        CommandParameter="{Binding ElementName=myWindow}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

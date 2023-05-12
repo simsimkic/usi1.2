@@ -1,0 +1,74 @@
+﻿<Window x:Class="ZdravoCorp.View.Table.DynamicalEquipmentTableView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoCorp.View.Table"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition Height="auto" MinHeight="100"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="330,0,0,2" Grid.RowSpan="3">
+            <TextBlock Text="Dinamicka Oprema" FontSize="15"/>
+
+        </Grid>
+
+        <Label Grid.Row="4" Margin="0,0,0,304" />
+
+        <ListView Grid.Row="4" Margin="50,10,50,68" ItemsSource="{Binding Equipments}" SelectedItem="{Binding SelectedEquipment}" BorderBrush="Black" Grid.RowSpan="2">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem" >
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"  />
+                    <Setter Property="Padding" Value="5" />
+
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View >
+                <GridView>
+
+
+                    <GridViewColumn Header="Oprema"  Width="350">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Type}" Padding="0 0 20 0" Width="auto"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Kolicina" Width="350" >
+                        <GridViewColumn.CellTemplate >
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Quantity}" Padding="0 0 0 0" Width="auto"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0,41,0,0"  >
+            <Grid Margin="250,0,0,0" Height="68">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="koeisnicko_ime" Grid.Column="0" Width="110" Height="30" Margin="0,0,10,0" Padding="0,5,0,0" HorizontalContentAlignment="Center" Text="{Binding RequestedQuantity, UpdateSourceTrigger=PropertyChanged}" />
+                <Button Grid.Column="1" Width="110" Height="30"  Content="Poruci opremu"  FontFamily="Arial Rounded MT Bold" Command="{Binding AddEquipmentRequestCommand}"/>
+
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -1,0 +1,315 @@
+{
+  "1": {
+    "MedicalRecord": {
+      "Height": 190.0,
+      "Weight": 110.0,
+      "Diseases": [
+        2,
+        0,
+        3
+      ],
+      "Alergies": [
+        7,
+        8,
+        1,
+        2,
+        3,
+        0,
+        6,
+        9
+      ]
+    },
+    "Id": 1,
+    "Username": "dusan123",
+    "FirstName": "Ana",
+    "LastName": "Ilić",
+    "Password": "123"
+  },
+  "2": {
+    "MedicalRecord": {
+      "Height": 186.0,
+      "Weight": 119.0,
+      "Diseases": [
+        7,
+        6,
+        5,
+        0,
+        1,
+        3
+      ],
+      "Alergies": [
+        1,
+        0,
+        5,
+        9,
+        7,
+        3,
+        2,
+        8,
+        4
+      ]
+    },
+    "Id": 2,
+    "Username": "QAKzHhI",
+    "FirstName": "Nikola",
+    "LastName": "Đorđević",
+    "Password": "8rwWVRW"
+  },
+  "3": {
+    "MedicalRecord": {
+      "Height": 184.0,
+      "Weight": 111.0,
+      "Diseases": [
+        0,
+        2,
+        9,
+        7,
+        8,
+        3,
+        1,
+        4,
+        6,
+        5
+      ],
+      "Alergies": [
+        4,
+        6,
+        7,
+        2,
+        8,
+        5,
+        0,
+        3,
+        1,
+        9
+      ]
+    },
+    "Id": 3,
+    "Username": "DQ59oIg",
+    "FirstName": "Sofija",
+    "LastName": "Vuković",
+    "Password": "A9k4b6X"
+  },
+  "4": {
+    "MedicalRecord": {
+      "Height": 184.0,
+      "Weight": 86.0,
+      "Diseases": [
+        4,
+        7,
+        2,
+        1,
+        6,
+        9,
+        3,
+        8
+      ],
+      "Alergies": [
+        1,
+        3,
+        0,
+        4,
+        8,
+        5,
+        9
+      ]
+    },
+    "Id": 4,
+    "Username": "ejK0tin",
+    "FirstName": "Jovan",
+    "LastName": "Đorđević",
+    "Password": "fQwe3yB"
+  },
+  "5": {
+    "MedicalRecord": {
+      "Height": 190.0,
+      "Weight": 120.0,
+      "Diseases": [
+        7,
+        4,
+        5
+      ],
+      "Alergies": [
+        4,
+        7,
+        8,
+        0,
+        1,
+        5,
+        3,
+        2
+      ]
+    },
+    "Id": 5,
+    "Username": "y7Vg3bf",
+    "FirstName": "Marko",
+    "LastName": "Arsić",
+    "Password": "qevNn3R"
+  },
+  "6": {
+    "MedicalRecord": {
+      "Height": 174.0,
+      "Weight": 75.0,
+      "Diseases": [
+        6,
+        8
+      ],
+      "Alergies": [
+        7,
+        0,
+        9,
+        1,
+        2,
+        8,
+        5,
+        4,
+        3,
+        6
+      ]
+    },
+    "Id": 6,
+    "Username": "MtzSCB3",
+    "FirstName": "Mihajlo",
+    "LastName": "Ilić",
+    "Password": "D7wekCd"
+  },
+  "7": {
+    "MedicalRecord": {
+      "Height": 184.0,
+      "Weight": 125.0,
+      "Diseases": [
+        8,
+        3,
+        6,
+        4
+      ],
+      "Alergies": [
+        3,
+        4,
+        2
+      ]
+    },
+    "Id": 7,
+    "Username": "mbKc5Ek",
+    "FirstName": "Milica",
+    "LastName": "Kovačević",
+    "Password": "PcBeaLa"
+  },
+  "8": {
+    "MedicalRecord": {
+      "Height": 184.0,
+      "Weight": 121.0,
+      "Diseases": [
+        5,
+        4,
+        6,
+        8
+      ],
+      "Alergies": [
+        3,
+        6,
+        0,
+        5,
+        9,
+        2,
+        8,
+        4,
+        7,
+        1
+      ]
+    },
+    "Id": 8,
+    "Username": "PRBjeGq",
+    "FirstName": "Tamara",
+    "LastName": "Arsić",
+    "Password": "9jOkDgg"
+  },
+  "9": {
+    "MedicalRecord": {
+      "Height": 197.0,
+      "Weight": 100.0,
+      "Diseases": [
+        0,
+        6,
+        4,
+        8,
+        3,
+        7,
+        9,
+        5
+      ],
+      "Alergies": [
+        0,
+        2
+      ]
+    },
+    "Id": 9,
+    "Username": "229UMWo",
+    "FirstName": "Milica",
+    "LastName": "Janković",
+    "Password": "8TO36Yb"
+  },
+  "10": {
+    "MedicalRecord": {
+      "Height": 193.0,
+      "Weight": 80.0,
+      "Diseases": [
+        0,
+        6,
+        4,
+        1,
+        2,
+        5,
+        9
+      ],
+      "Alergies": [
+        5,
+        7,
+        4,
+        8,
+        1
+      ]
+    },
+    "Id": 10,
+    "Username": "QPcGO2i",
+    "FirstName": "Ana",
+    "LastName": "Kovačević",
+    "Password": "WP2bUYP"
+  },
+  "11": {
+    "MedicalRecord": {
+      "Height": 201.0,
+      "Weight": 100.0,
+      "Diseases": [
+        3
+      ],
+      "Alergies": [
+        1,
+        3,
+        5
+      ]
+    },
+    "Id": 11,
+    "Username": "mare",
+    "FirstName": "Marko",
+    "LastName": "Markovic",
+    "Password": "markeza"
+  },
+  "12": {
+    "MedicalRecord": {
+      "Height": 200.0,
+      "Weight": 100.0,
+      "Diseases": [
+        9
+      ],
+      "Alergies": [
+        0
+      ]
+    },
+    "Id": 12,
+    "Username": "1",
+    "FirstName": "Test",
+    "LastName": "Testovic",
+    "Password": "1"
+  }
+}

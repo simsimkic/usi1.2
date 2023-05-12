@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="ZdravoCorp.View.DirectorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoCorp.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Button Height="30" Margin="303,208,300,212" Content="Prikaz Staticke Opreme" BorderBrush="#FF3B71BF" Background="#FF91D8E4" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowStaticEquipmentQuantityTable}"/>
+        <Button Height="30" Margin="305,377,298,43" Content="Rasporedjivanje dinamicke opreme" BorderBrush="#FF3B71BF" Background="#FF91D8E4" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowDynamicalEquipmentRedistributionTable}"/>
+        <Button Height="30" Margin="306,310,297,110" Content="Rasporedjivanje staticke opreme" BorderBrush="#FF3B71BF" Background="#FF91D8E4" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowStaticEquipmentRedistributionTable}"/>
+        <Button Height="30" Margin="300,119,303,301" Content="Prikaz Dinamicke Opreme" BorderBrush="#FF3B71BF" Background="#FF91D8E4" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowDynamicalEquipmentTable}"/>
+    </Grid>
+</UserControl>

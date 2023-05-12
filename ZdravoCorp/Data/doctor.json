@@ -1,0 +1,82 @@
+{
+  "1": {
+    "Specialization": 18,
+    "Id": 1,
+    "Username": "stefan123",
+    "FirstName": "Mihajlo",
+    "LastName": "Đorđević",
+    "Password": "123"
+  },
+  "2": {
+    "Specialization": 2,
+    "Id": 2,
+    "Username": "ada",
+    "FirstName": "Tamara",
+    "LastName": "Ilić",
+    "Password": "ada"
+  },
+  "3": {
+    "Specialization": 0,
+    "Id": 3,
+    "Username": "2",
+    "FirstName": "Jovan",
+    "LastName": "Kovačević",
+    "Password": "2"
+  },
+  "4": {
+    "Specialization": 0,
+    "Id": 4,
+    "Username": "3",
+    "FirstName": "Stefan",
+    "LastName": "Janković",
+    "Password": "3"
+  },
+  "5": {
+    "Specialization": 1,
+    "Id": 5,
+    "Username": "6OoBdvM",
+    "FirstName": "Milica",
+    "LastName": "Đorđević",
+    "Password": "0HGfoEb"
+  },
+  "6": {
+    "Specialization": 5,
+    "Id": 6,
+    "Username": "V6pXcSr",
+    "FirstName": "Sofija",
+    "LastName": "Vuković",
+    "Password": "AJVSitH"
+  },
+  "7": {
+    "Specialization": 14,
+    "Id": 7,
+    "Username": "eWlbP2r",
+    "FirstName": "Petar",
+    "LastName": "Marković",
+    "Password": "BqE3B6b"
+  },
+  "8": {
+    "Specialization": 11,
+    "Id": 8,
+    "Username": "KfHZ2RO",
+    "FirstName": "Jovan",
+    "LastName": "Petrović",
+    "Password": "IwBycVL"
+  },
+  "9": {
+    "Specialization": 10,
+    "Id": 9,
+    "Username": "t",
+    "FirstName": "Tamara",
+    "LastName": "Vuković",
+    "Password": "t"
+  },
+  "10": {
+    "Specialization": 10,
+    "Id": 10,
+    "Username": "s",
+    "FirstName": "Sofija",
+    "LastName": "Đorđević",
+    "Password": "s"
+  }
+}

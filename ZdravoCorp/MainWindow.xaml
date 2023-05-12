@@ -1,0 +1,36 @@
+﻿<Window x:Class="ZdravoCorp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp" 
+        xmlns:view="clr-namespace:ZdravoCorp.View"
+        xmlns:viewtable="clr-namespace:ZdravoCorp.View.Table"
+        xmlns:vms="clr-namespace:ZdravoCorp.ViewModel"
+        xmlns:vmstable="clr-namespace:ZdravoCorp.ViewModel.Table"
+        xmlns:vmsform="clr-namespace:ZdravoCorp.ViewModel.Form"
+        xmlns:viewform="clr-namespace:ZdravoCorp.View.Form"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="500">
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vms:LoginViewModel}">
+                <view:LoginView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:DirectorViewModel}">
+                <view:DirectorView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmstable:PatientTableViewModel}">
+                <view:NurseControl />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:DoctorMainViewModel}">
+                <view:DoctorView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:PatientMainViewModel}">
+                <view:PatientMainView />
+            </DataTemplate>
+        </Grid.Resources>
+
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+    </Grid>
+</Window>

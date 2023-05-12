@@ -1,0 +1,279 @@
+[
+  {
+    "IsCanceled": false,
+    "Doctor": {
+      "Specialization": 9,
+      "Id": 11,
+      "Username": "710gFUV",
+      "FirstName": "Sofija",
+      "LastName": "Stojanović",
+      "Password": "TpwIkwf"
+    },
+    "Patient": {
+      "MedicalRecord": {
+        "Height": 189.0,
+        "Weight": 146.0,
+        "Diseases": [
+          6,
+          5
+        ],
+        "Alergies": [
+          5,
+          2,
+          7,
+          6,
+          4,
+          8,
+          9,
+          1,
+          3,
+          0
+        ]
+      },
+      "Id": 12,
+      "Username": "M78ypCx",
+      "FirstName": "Tamara",
+      "LastName": "Vuković",
+      "Password": "fZdCQJ0"
+    },
+    "TimeSlot": {
+      "From": "2023-05-01T10:07:00",
+      "To": "2023-05-01T10:22:00"
+    },
+    "IsOperation": true,
+    "Id": 1,
+    "ChangeCount": 1,
+    "CreatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IsCanceled": false,
+    "Doctor": {
+      "Specialization": 0,
+      "Id": 11,
+      "Username": "a5bSvyg",
+      "FirstName": "Nikola",
+      "LastName": "Arsić",
+      "Password": "nNjGYbG"
+    },
+    "Patient": {
+      "MedicalRecord": {
+        "Height": 189.0,
+        "Weight": 146.0,
+        "Diseases": [
+          6,
+          5
+        ],
+        "Alergies": [
+          5,
+          2,
+          7,
+          6,
+          4,
+          8,
+          9,
+          1,
+          3,
+          0
+        ]
+      },
+      "Id": 12,
+      "Username": "M78ypCx",
+      "FirstName": "Tamara",
+      "LastName": "Vuković",
+      "Password": "fZdCQJ0"
+    },
+    "TimeSlot": {
+      "From": "2023-04-18T01:43:00",
+      "To": "2023-04-18T01:58:00"
+    },
+    "IsOperation": false,
+    "Id": 5,
+    "ChangeCount": 0,
+    "CreatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IsCanceled": false,
+    "Doctor": {
+      "Specialization": 7,
+      "Id": 12,
+      "Username": "99O8Jam",
+      "FirstName": "Sofija",
+      "LastName": "Janković",
+      "Password": "lYuSFb8"
+    },
+    "Patient": {
+      "MedicalRecord": {
+        "Height": 189.0,
+        "Weight": 146.0,
+        "Diseases": [
+          6,
+          5
+        ],
+        "Alergies": [
+          5,
+          2,
+          7,
+          6,
+          4,
+          8,
+          9,
+          1,
+          3,
+          0
+        ]
+      },
+      "Id": 12,
+      "Username": "M78ypCx",
+      "FirstName": "Tamara",
+      "LastName": "Vuković",
+      "Password": "fZdCQJ0"
+    },
+    "TimeSlot": {
+      "From": "2023-04-26T09:15:00",
+      "To": "2023-04-26T09:15:00"
+    },
+    "IsOperation": false,
+    "Id": 6,
+    "ChangeCount": 0,
+    "CreatedAt": "0001-01-01T00:00:00"
+  },
+  {
+
+    "IsCanceled": false,
+    "Doctor": {
+      "Specialization": 9,
+      "Id": 11,
+      "Username": "710gFUV",
+      "FirstName": "Sofija",
+      "LastName": "Stojanović",
+      "Password": "TpwIkwf"
+    },
+    "Patient": {
+      "MedicalRecord": {
+        "Height": 189.0,
+        "Weight": 146.0,
+        "Diseases": [
+          6,
+          5
+        ],
+        "Alergies": [
+          5,
+          2,
+          7,
+          6,
+          4,
+          8,
+          9,
+          1,
+          3,
+          0
+        ]
+      },
+      "Id": 12,
+      "Username": "M78ypCx",
+      "FirstName": "Tamara",
+      "LastName": "Vuković",
+      "Password": "fZdCQJ0"
+    },
+    "TimeSlot": {
+      "From": "2023-04-27T09:17:00",
+      "To": "2023-04-27T09:17:00"
+    },
+    "IsOperation": false,
+    "Id": 7,
+    "ChangeCount": 0,
+    "CreatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IsCanceled": false,
+    "Doctor": {
+      "Specialization": 7,
+      "Id": 12,
+      "Username": "99O8Jam",
+      "FirstName": "Sofija",
+      "LastName": "Janković",
+      "Password": "lYuSFb8"
+    },
+    "Patient": {
+      "MedicalRecord": {
+        "Height": 189.0,
+        "Weight": 146.0,
+        "Diseases": [
+          6,
+          5
+        ],
+        "Alergies": [
+          5,
+          2,
+          7,
+          6,
+          4,
+          8,
+          9,
+          1,
+          3,
+          0
+        ]
+      },
+      "Id": 12,
+      "Username": "M78ypCx",
+      "FirstName": "Tamara",
+      "LastName": "Vuković",
+      "Password": "fZdCQJ0"
+    },
+    "TimeSlot": {
+      "From": "2023-04-27T09:07:00",
+      "To": "2023-04-27T09:22:00"
+    },
+    "IsOperation": false,
+    "Id": 8,
+    "ChangeCount": 0,
+    "CreatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IsCanceled": false,
+    "Doctor": {
+      "Specialization": 18,
+      "Id": 6,
+      "Username": "3YPctjx",
+      "FirstName": "Mihajlo",
+      "LastName": "Vuković",
+      "Password": "j3PPQzT"
+    },
+    "Patient": {
+      "MedicalRecord": {
+        "Height": 189.0,
+        "Weight": 146.0,
+        "Diseases": [
+          6,
+          5
+        ],
+        "Alergies": [
+          5,
+          2,
+          7,
+          6,
+          4,
+          8,
+          9,
+          1,
+          3,
+          0
+        ]
+      },
+      "Id": 12,
+      "Username": "dusan123",
+      "FirstName": "Tamara",
+      "LastName": "Vuković",
+      "Password": "123"
+    },
+    "TimeSlot": {
+      "From": "2023-05-03T06:46:00",
+      "To": "2023-05-03T07:01:00"
+    },
+    "IsOperation": false,
+    "Id": 9,
+    "ChangeCount": 0,
+    "CreatedAt": "0001-01-01T00:00:00"
+  }
+]

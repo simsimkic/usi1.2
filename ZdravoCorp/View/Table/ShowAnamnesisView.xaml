@@ -1,0 +1,91 @@
+﻿<Window x:Class="ZdravoCorp.View.Table.ShowAnamnesisView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.View.Table"
+        xmlns:table="clr-namespace:ZdravoCorp.ViewModel.Table"
+        d:DataContext="{d:DesignInstance Type=table:ShowAnamnesisViewModel}"
+        mc:Ignorable="d"
+        Title="AnamnesisView" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock 
+                Grid.Column="0"
+                FontSize="30"
+                Text="Anamneza"
+                Style="{StaticResource Header}"/>
+
+        </Grid>
+        <Grid Grid.Row="1" Margin="0 30 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock 
+                Grid.Column="0"
+                FontSize="20"
+                Margin="20 10 0 0"
+                Text="Simptomi:"/>
+            <TextBox Grid.Column="1" 
+                   Background="LightGray"
+                   Margin="30 10 0 0"
+                   Padding="10"
+                   Width="600"
+                   Text="{Binding Sympthoms}"/>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock 
+                Grid.Column="0"
+                FontSize="20"
+                Margin="20 10 0 0"
+                Text="Obzervacija:"/>
+            <TextBox Grid.Column="1" 
+                   Background="LightGray"
+                   Margin="30 10 0 0"
+                   Padding="10"
+                   Width="600"
+                   Text="{Binding Observation}"/>
+
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock 
+                Grid.Column="0"
+                FontSize="20"
+                Margin="20 10 0 0"
+                Text="Zakljucak:"/>
+            <TextBox Grid.Column="1" 
+                   Background="LightGray"
+                   Margin="30 10 0 0"
+                   Padding="10"
+                   Width="600"
+                   Text="{Binding Conclusion}"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

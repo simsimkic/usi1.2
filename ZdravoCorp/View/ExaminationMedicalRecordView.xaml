@@ -1,0 +1,132 @@
+﻿<Window x:Class="ZdravoCorp.View.ExaminationMedicalRecordView"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.View.Form"
+        xmlns:viewmodel="clr-namespace:ZdravoCorp.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:ExaminationMedicalRecordViewModel}"
+        mc:Ignorable="d"
+        Title="MedicalRecordView" Height="450" Width="400">
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <TextBlock
+                Grid.Row="0"
+                Text="Zdravstveni Karton"
+                Style="{StaticResource Header}" />
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                Text="Visina" />
+            <TextBox
+                Grid.Column="1"
+                Text="{Binding  Height}"/>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                Text="Težina" />
+            <TextBox
+                Grid.Column="1"
+                Text="{Binding Weight}"/>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <ListView Grid.Row="0" Height="100" ItemsSource="{Binding Alergies}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding}" Margin="5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Alergije"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Grid Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox 
+                            ItemsSource="{Binding AvaliableAlergies}" 
+                            SelectedItem="{Binding SelectedAlergy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                            Margin="10"
+                            Width="110"/>
+                        <Button Content="Dodaj" Command="{Binding AddAlergy}"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <ListView Grid.Row="0" Height="100" ItemsSource="{Binding Diseases}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding}" Margin="5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Bolesti"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Grid Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox 
+                            ItemsSource="{Binding AvaliableDiseases}" 
+                            SelectedItem="{Binding SelectedDisease}" 
+                            Margin="10"
+                            Width="110"/>
+                        <Button Content="Dodaj" Command="{Binding AddDisease}"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <StackPanel Grid.Row ="4" Grid.Column="2" Orientation="Horizontal" Margin="0 25 0 0" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Margin="0 0 10 0" Content="Dodaj" Command="{Binding SubmitCommand}"/>
+            <Button Margin="0 0 10 0" Content="Anamneza" Command="{Binding AddAnamnesisCommand}"/>
+        </StackPanel>
+    </Grid>
+</Window>

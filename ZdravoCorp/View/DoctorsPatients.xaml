@@ -1,0 +1,89 @@
+﻿<Window x:Class="ZdravoCorp.View.DoctorsPatients"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:ZdravoCorp.View"
+        xmlns:viewmodels="clr-namespace:ZdravoCorp.ViewModel.Table"
+        d:DataContext="{d:DesignInstance Type=viewmodels:DoctorPatientsTableViewModel}"
+        mc:Ignorable="d" 
+        Title="DoctorsPatients" Height="450" Width="800">
+
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Text="Pacijenti"
+            Margin="15"
+            VerticalAlignment="Center"
+            Style="{StaticResource Header}" />
+        
+        <ListView Grid.Row="1"  ItemsSource="{Binding Patients}" SelectedItem="{Binding SelectedPatient}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem" >
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Id}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Ime" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding FirstName}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Prezime">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding LastName}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Zdravstveni karton" Width="160">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding HasMedicalRecord}" Foreground="Red" Width="auto" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0 0 10 0"
+                    Text="Pretraga: "/>
+                <TextBox Width="100" Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <StackPanel Grid.Column ="1" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button Content="Zdravstveni karton" Margin="10 0 0 0" Command="{Binding OpenMedicalRecord}"/>
+            </StackPanel>
+        </Grid>
+
+
+
+    </Grid>
+</Window>

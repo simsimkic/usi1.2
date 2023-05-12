@@ -1,0 +1,172 @@
+﻿<Window x:Class="ZdravoCorp.View.Form.PatientAdvancedAppointmentScheduilingView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.View.Form"
+        xmlns:viewmodel="clr-namespace:ZdravoCorp.ViewModel.Form" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        d:DataContext="{d:DesignInstance Type=viewmodel:PatientMedicalRecordTableViewModel}"
+        mc:Ignorable="d"
+         Height="450" Width="480">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock 
+                Grid.Column="0"
+                FontSize="24"
+                Text="Napredno zakazivanje pregleda"
+                Style="{StaticResource Header}"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="20 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Grid.Column="0"
+                Text="Vreme od: "
+                Margin="0 0 15 0"/>
+
+            <xctk:TimePicker 
+                Grid.Column="1"
+                Format="Custom" x:Name="fromDTP"
+                FormatString="HH:mm"
+                Text="{Binding From}" 
+                StartTime="08:00"
+                EndTime="20:00"/>
+        </Grid>
+        
+        <Grid Grid.Row="3" Margin="20 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Grid.Column="0"
+                Text="Vreme do: "
+                Margin="0 0 15 0"/>
+            <xctk:TimePicker 
+                Grid.Column="1"
+                Format="Custom" 
+                FormatString="HH:mm"
+                Text="{Binding To}" 
+                StartTime="08:00"
+                EndTime="20:00"/>
+        </Grid>
+
+        <Grid Grid.Row="4" Margin="20 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock
+                Grid.Column="0"
+                Text="Prioritet "
+                Margin="0 0 15 0"/>
+            
+            <StackPanel Grid.Column="1">
+                <RadioButton 
+                    Content="Vreme" 
+                    GroupName="Options" 
+                    Margin="0,0,30,0" 
+                    IsChecked="{Binding IsTimeSelected}"/>
+                <RadioButton 
+                    Content="Doktor" 
+                    GroupName="Options"
+                    IsChecked="{Binding IsDoctorSelected}"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="5" Margin="20 10 10 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Grid.Column="0"
+                Text="Najkasniji datum: "
+                Margin="0 0 15 0"/>
+            
+            <DatePicker 
+                Grid.Column="1"
+                SelectedDate="{Binding Date, Mode=TwoWay}"/>
+        </Grid>
+
+        <ListView Grid.Row="6" Margin="15 15 20 0" 
+                  HorizontalAlignment ="Left"
+                  ItemsSource="{Binding Doctors}"
+                  SelectedItem="{Binding SelectedDoctor}"
+                  
+                  SelectionMode="Single" RenderTransformOrigin="0.51,0.6">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem" >
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Ime i prezime" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding FullName}" Padding="10 7 20 4" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Specijalizacija" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Specialization}" Padding="10 0 20 0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Grid Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Button 
+                Grid.Column="0"
+                Margin="50 10 10 10"
+                Padding="7"
+                Content="Pronadji termin"
+                Background="#fff"
+                Command="{Binding FindAppointmentCommand}"
+               />
+            <Button 
+                Grid.Column="1"
+                Margin="20 10 10 10"
+                Padding="7"
+                Content="Izadji"
+                Background="#fff"
+                Command="{Binding CloseCommand}"
+                CommandParameter="{Binding ElementName=myWindow}"
+                />
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="ZdravoCorp.View.PatientMainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoCorp.View"
+             mc:Ignorable="d" 
+             xmlns:viewmodel="clr-namespace:ZdravoCorp.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:PatientMainViewModel}"
+             d:DesignHeight="450" d:DesignWidth="600">
+    
+    <Grid HorizontalAlignment="Center" Width="400">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="5 25 5 0">
+            <TextBlock Text="Dobro dosli" FontSize="24" HorizontalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="5 25 5 0">
+            <Button 
+                Width="250"
+                Margin="5 10 5 10"
+                Padding="7"
+                Content="Obicno zakazivanje"
+                FontSize="22"
+                Background="#fff"
+                Command="{Binding PatientAppointmetsCommand}"/>
+        </Grid>
+        <Grid Grid.Row="2" Margin="5 25 5 0">
+            <Button 
+                Width="250"
+                Margin="5 10 5 10"
+                Padding="7"
+                Content="Preporuka termina"
+                FontSize="22"
+                Background="#fff"
+                Command="{Binding SchedulingRecommendationCommand}"/>
+        </Grid>
+        <Grid Grid.Row="3" Margin="5 25 5 0">
+            <Button 
+                Width="250"
+                Margin="5 10 5 10"
+                Padding="7"
+                Content="Pregled kartona"
+                FontSize="22"
+                Background="#fff"
+                Command="{Binding OpenPatientMedicalRecordCommand}"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="ZdravoCorp.View.PatientTableControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZdravoCorp.View"
+             xmlns:viewmodel="clr-namespace:ZdravoCorp.ViewModel.Table" d:DataContext="{d:DesignInstance Type=viewmodel:PatientTableViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="450">
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Text="Pacijenti"
+            Margin="15"
+            VerticalAlignment="Center"
+            Style="{StaticResource Header}" />
+        <Button Grid.Row="1" Content="Zdravstveni karton" Width="120"  VerticalAlignment="Center" HorizontalAlignment="Right" Panel.ZIndex="1" Margin="0 25" Command="{Binding OpenMedicalRecord}"/>
+        <Button Grid.Row="1" Content="Urgentni pregled" Width="120"  VerticalAlignment="Center" HorizontalAlignment="Right" Panel.ZIndex="1" Margin="0 70 0 0" Command="{Binding CreateUrgentAppointment}"/>
+        <ListView Grid.Row="1"  ItemsSource="{Binding Patients}" SelectedItem="{Binding SelectedPatient}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem" >
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Id}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Ime" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding FirstName}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Prezime">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding LastName}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Zdravstveni karton" Width="160">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding HasMedicalRecord}" Foreground="Red" Width="auto" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0 0 10 0"
+                    Text="Pretraga: "/>
+                <TextBox Width="100"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column ="1" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button Content="Dodaj" Margin="10 0 0 0" Command="{Binding AddPatient}"/>
+                <Button Content="Izmeni" Margin="10 0 0 0" Command="{Binding UpdatePatient}"/>
+                <Button Content="Obriši" Margin="10 0 0 0" Command="{Binding RemovePatient}"/>
+            </StackPanel>
+        </Grid>
+       
+
+
+    </Grid>
+</UserControl>
